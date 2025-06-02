@@ -15,6 +15,12 @@ import { AutoSliderComponent } from './home/auto-slider/auto-slider.component';
 import { ProgramAtAGlanceComponent } from './home/program-at-a-glance/program-at-a-glance.component';
 import { ScrollAnimateDirective } from './home/home/scroll-animate.directive';
 import { ProgramCurriculumComponent } from './home/program-curriculum/program-curriculum.component';
+import { ProductDevelopmentComponent } from './pages/services/product-development/product-development.component';
+import { CustomSoftwareComponent } from './pages/services/custom-software/custom-software.component';
+import { WebMobileAppsComponent } from './pages/services/web-mobile-apps/web-mobile-apps.component';
+import { ConsultingComponent } from './pages/services/consulting/consulting.component';
+import { TrainingComponent } from './pages/services/training/training.component';
+import { DigitalMarketingComponent } from './pages/services/digital-marketing/digital-marketing.component';
 
 
 
@@ -31,7 +37,13 @@ import { ProgramCurriculumComponent } from './home/program-curriculum/program-cu
     AutoSliderComponent,
     ProgramAtAGlanceComponent,
     ScrollAnimateDirective,
-    ProgramCurriculumComponent
+    ProgramCurriculumComponent,
+    ProductDevelopmentComponent,
+    CustomSoftwareComponent,
+    WebMobileAppsComponent,
+    ConsultingComponent,
+    TrainingComponent,
+    DigitalMarketingComponent
   ],
   imports: [
     BrowserModule,
