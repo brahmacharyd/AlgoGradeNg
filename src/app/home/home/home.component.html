@@ -1,0 +1,38 @@
+<section class="bg-brandbg py-20" 
+  scrollAnimate 
+  (visible)="onVisible('section1')" 
+  [@fadeSlideIn]="sectionStates['section1']">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h1 class="text-4xl font-extrabold mb-4 heading">
+      Transform Your Career with Algograd
+    </h1>
+    <p class="text-lg text-white mb-8">
+      Software, Training & Career Solutions in One Place
+    </p>
+    <a routerLink="/services"
+      class="inline-block bg-btnBg text-white px-6 py-3 rounded-full shadow hover:bg-btnBgHover transition text-center cursor-pointer">
+      Get Started
+    </a>
+  </div>
+</section>
+
+<section 
+  scrollAnimate 
+  (visible)="onVisible('section2')" 
+  [@fadeSlideIn]="sectionStates['section2']">
+  <app-auto-slider></app-auto-slider>
+</section>
+
+<section 
+  scrollAnimate 
+  (visible)="onVisible('section3')" 
+  [@fadeSlideIn]="sectionStates['section3']">
+  <app-program-at-a-glance></app-program-at-a-glance>
+</section>
+
+<section 
+  scrollAnimate 
+  (visible)="onVisible('section3')" 
+  [@fadeSlideIn]="sectionStates['section3']">
+  <app-program-curriculum></app-program-curriculum>
+</section>

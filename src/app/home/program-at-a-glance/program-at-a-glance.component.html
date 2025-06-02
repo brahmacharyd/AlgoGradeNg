@@ -1,0 +1,44 @@
+<div class="py-10 bg-[#171421] text-white px-6 lg:px-20">
+    <h2 class="text-3xl font-medium text-center mb-10">Program at a Glance</h2>
+
+    <div class="flex flex-col lg:flex-row gap-8 max-w-[90rem] mx-auto">
+        <!-- Left: Steps -->
+        <div class="w-full lg:w-2/5 space-y-4">
+            <div *ngFor="let step of steps; let i = index" (click)="setActiveStep(i)"
+            class="rounded-xl p-6 cursor-pointer relative transition-all duration-300 overflow-hidden" 
+            [ngClass]="{
+              'bg-programGlanceBg border border-blue-400': currentStep === i,
+              'bg-[#1d162e] hover:bg-[#1f1930] border-[1px] border-white/20': currentStep !== i
+            }">
+            
+            <h3 class="text-lg font-semibold transition-colors" [ngClass]="{
+              'text-white': currentStep === i,
+              'text-white/70': currentStep !== i
+            }">
+              {{ step.title }}
+            </h3>
+          
+            <p *ngIf="currentStep === i" class="mt-2 text-sm text-white">
+              {{ step.desc }}
+            </p>
+          
+            <!-- Progress Bar -->
+            <div *ngIf="currentStep === i" class="absolute bottom-0 left-0 right-0 rounded-b-xl overflow-hidden">
+              <div class="w-full h-1 bg-white/10">
+                <div
+                  class="h-full bg-programGlanceBgbar transition-all duration-[4000ms]"
+                  [style.width.%]="progress">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Right: Image -->
+        <div class="w-full lg:w-3/5 flex justify-center items-center">
+            <img [src]="steps[currentStep].image" alt="Step image"
+                class="max-w-[30rem] rounded-lg shadow-2xl transition-opacity duration-500" />
+        </div>
+    </div>
+</div>

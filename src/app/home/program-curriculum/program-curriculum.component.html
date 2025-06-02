@@ -1,0 +1,75 @@
+<div class="text-white max-w-7xl mx-auto p-6 rounded-md shadow-lg">
+    <h1 id="webApp" class="text-4xl font-medium text-center mb-14">Program Curriculum</h1>
+
+    <!-- Program Tabs -->
+    <div class="flex gap-4 mb-10 flex-wrap">
+        <button *ngFor="let tab of programTabs" (click)="onSelectProgram(tab.key)"
+            [class.text-white]="selectedProgram === tab.key"
+            class="px-4 py-2 rounded-md bg-programcirculamBg border-blue-400 hover:bg-blue-600 transition"
+            [attr.aria-pressed]="selectedProgram === tab.key">
+            {{ tab.label }}
+        </button>
+    </div>
+
+    <!-- Main container: left and right side by side -->
+    <div class="flex flex-col md:flex-row gap-10">
+
+        <!-- Left side: Tabs + weeks + content -->
+        <div class="flex flex-col md:flex-row gap-10 md:w-3/4">
+
+            <!-- Weeks List -->
+            <div class="flex flex-col gap-3 md:w-1/5 max-h-96 overflow-y-auto border-r border-gray-700 pr-4">
+                <div *ngFor="let week of visibleWeeks" (click)="onSelectWeek(week)"
+                    [class.font-bold]="selectedWeek === week" [class.text-white]="selectedWeek === week"
+                    [class.text-gray-400]="selectedWeek !== week"
+                    class="cursor-pointer whitespace-nowrap py-2 px-3 rounded hover:bg-gray-700 transition">
+                    {{ week.label }}
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="md:w-4/5 max-h-96 overflow-y-auto">
+                <h2 class="text-2xl font-bold text-programcirculamBg mb-6" id="content-heading">
+                    {{ currentContent.heading }}
+                </h2>
+                <ul class="space-y-4" id="content-points">
+                    <li *ngFor="let point of currentContent.points"
+                        class="flex items-start gap-3 text-lg font-light leading-relaxed">
+                        <svg class="w-5 h-5 text-purple-600 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414L9 14.414 6.293 11.707a1 1 0 011.414-1.414L9 11.586l6.293-6.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span>{{ point }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right side: Guidance & Mentorship -->
+        <div
+            class="md:w-1/2 bg-programcirculamBg rounded-lg p-6 shadow-lg flex flex-col gap-6 min-w-[280px] max-h-96 overflow-y-auto">
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-700 to-indigo-900 flex items-center justify-center shadow-md">
+                        <img src="../../../assets/img/download_curriculum_icon.da8163f.svg" alt="books"
+                            class="w-9 h-9" />
+                    </div>
+                    <h3
+                        class="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-white">
+                        Guidance & Mentorship
+                    </h3>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Dive into the complete roadmap of our web development program, including tools,
+                    frameworks, project work, and career-building support. With a dedicated mentor by
+                    your side and a career guide to help you navigate your journey, you'll be fully
+                    equipped to achieve your goals.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

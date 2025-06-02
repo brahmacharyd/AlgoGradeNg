@@ -1,0 +1,15 @@
+<div class="slider-container">
+  <div class="slider-track">
+    <div
+      *ngFor="let item of sliderItems.concat(sliderItems); let i = index"
+      class="slider-item"
+      [ngStyle]="{
+        'border-color': colors[i % colors.length].border,
+        'background-color': colors[i % colors.length].bg,
+        'color': colors[i % colors.length].text
+      }"
+    >
+      {{ item }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<nav class="bg-brandbg shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 text-white font-bold text-xl">
+        <a routerLink="/">AlgoGrad</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="text-white focus:outline-none"
+          (click)="toggleMenu()"
+        >
+          <svg
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              *ngIf="!menuOpen"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+            <path
+              *ngIf="menuOpen"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Items -->
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/" routerLinkActive="text-indigo-300 font-semibold" class="text-white hover:text-indigo-300">Home</a>
+        <a routerLink="/services" routerLinkActive="text-indigo-300 font-semibold" class="text-white hover:text-indigo-300">Services</a>
+        <a routerLink="/training-placements" routerLinkActive="text-indigo-300 font-semibold" class="text-white hover:text-indigo-300">Training & Placements</a>
+        <a routerLink="/about-us" routerLinkActive="text-indigo-300 font-semibold" class="text-white hover:text-indigo-300">About Us</a>
+        <a routerLink="/contact" routerLinkActive="text-indigo-300 font-semibold" class="text-white hover:text-indigo-300">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu dropdown -->
+  <div
+    class="md:hidden"
+    *ngIf="menuOpen"
+  >
+    <div class="px-4 pt-2 pb-3 space-y-1 bg-brandbg shadow">
+      <a routerLink="/" routerLinkActive="text-indigo-300 font-semibold" class="block text-white hover:text-indigo-300">Home</a>
+      <a routerLink="/services" routerLinkActive="text-indigo-300 font-semibold" class="block text-white hover:text-indigo-300">Services</a>
+      <a routerLink="/training-placements" routerLinkActive="text-indigo-300 font-semibold" class="block text-white hover:text-indigo-300">Training & Placements</a>
+      <a routerLink="/about-us" routerLinkActive="text-indigo-300 font-semibold" class="block text-white hover:text-indigo-300">About Us</a>
+      <a routerLink="/contact" routerLinkActive="text-indigo-300 font-semibold" class="block text-white hover:text-indigo-300">Contact</a>
+    </div>
+  </div>
+</nav>
